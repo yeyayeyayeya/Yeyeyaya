@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h> // Thư viện này cung cấp hàm sqrt()
+void XuatSn() {
+    int i;
+    // Duyệt qua các số từ 10 đến 99
+    for (i = 10; i <= 99; i++) {
+        // Kiểm tra xem số đó có phải là bội của 7 không
+        if (i % 7 == 0) {
+            // Nếu đúng, in ra số đó
+            printf("%d\t", i);
+        }
+    }
+}
+
+// Hàm kiểm tra số chính phương
+int KtraSCP(int x) {
+    int sqr = (int)sqrt(x);
+    return sqr * sqr == x;
+}
+
+// Hàm đếm và in ra các số chính phương nhỏ hơn n
+void XuatSCP(int n) {
+    int count = 0;
+    printf("Cac so chinh phuong nho hon %d la: ", n);
+    for (int i = n - 1; i >= 1; --i) {
+        if (KtraSCP(i)) {
+            printf("%d, ", i);
+            count++;
+        }
+    }
+    printf("\nTong so cac so chinh phuong la: %d\n", count);
+}
+
+int main()
+{
+    // Your code here!
+   //XuatSn();
+   int n;
+    printf("Nhap n: ");
+    scanf("%d", &n);
+    XuatSCP(n);
+   return 0;
+}
